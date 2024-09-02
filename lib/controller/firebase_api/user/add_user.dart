@@ -10,8 +10,7 @@ class AddUserService {
 
       FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
 
-      var date = DateTime.now();
-      log(date.toString().substring(0,10));
+      var d = DateTime.now();
       await firebaseFirestore.collection("user").add(data);
       return true;
     } catch (e) {

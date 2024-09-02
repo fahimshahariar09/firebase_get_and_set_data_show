@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-class NameTextField extends StatelessWidget {
-  const NameTextField({super.key, required this.nameController});
+class PasswordTextField extends StatelessWidget {
+  const PasswordTextField({super.key, required this.passwordController});
 
-  final TextEditingController nameController;
+  final TextEditingController passwordController;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      controller: nameController,
+      controller: passwordController,
       decoration: InputDecoration(
-          focusedBorder: OutlineInputBorder(
+        focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
           ),
           enabledBorder: OutlineInputBorder(
@@ -25,10 +25,10 @@ class NameTextField extends StatelessWidget {
               color: Colors.red,
             ),
           ),
-          labelText: "Name"),
+          labelText: "Password"),
       validator: (value) {
         if (value == "" || value == null) {
-          return "Name can't be empty";
+          return "Password can't be empty";
         }
         return null;
       },

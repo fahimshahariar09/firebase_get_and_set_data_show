@@ -1,3 +1,4 @@
+import 'package:firebase/controller/view/screen/common_widget/common_text.dart';
 import 'package:flutter/material.dart';
 
 class CommonButton extends StatelessWidget {
@@ -26,7 +27,11 @@ class CommonButton extends StatelessWidget {
         child: SizedBox(
           height: buttonHeight ?? 50,
           width: buttonWidget ?? MediaQuery.sizeOf(context).width,
-          child: const Text("data"),
+          child: CommonText(
+            titel: buttonName,
+            fColor: textColor ?? Colors.white,
+            fSize: 18,
+          ),
         ),
       ),
     );

@@ -1,5 +1,5 @@
 
-import 'package:firebase/controller/firebase_getx/firebase_setting.dart';
+import 'package:firebase/utlis/firebase_setting.dart';
 import 'package:firebase/controller/view/screen/add_user.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';

@@ -1,7 +1,7 @@
 import 'package:firebase/controller/firebase_getx/user/add_user.dart';
-import 'package:firebase/controller/view/screen/common_widget/common_button.dart';
-import 'package:firebase/controller/view/screen/widget/name_text_field.dart';
-import 'package:firebase/controller/view/screen/widget/password_text_field.dart';
+import 'package:firebase/view/screen/common_widget/common_button.dart';
+import 'package:firebase/view/screen/widget/name_text_field.dart';
+import 'package:firebase/view/screen/widget/password_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

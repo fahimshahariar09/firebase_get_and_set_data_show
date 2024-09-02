@@ -1,4 +1,4 @@
-import 'package:firebase/controller/view/screen/common_widget/common_text.dart';
+import 'package:firebase/view/screen/common_widget/common_text.dart';
 import 'package:flutter/material.dart';
 
 class CommonButton extends StatelessWidget {

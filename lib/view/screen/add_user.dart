@@ -35,8 +35,33 @@ class AddUser extends StatelessWidget {
                 SizedBox(
                   height: 20,
                 ),
-                CommonButton(buttonName: "Add User", onTap: () {
-                  addUserController.adduserFun();
+                Obx(
+                  () => addUserController.isLoading.isFalse
+                      ? CommonButton(
+                          buttonName: "Add User",
+                          onTap: () {
+                            addUserController.adduserFun();
+                          })
+                      : CircularProgressIndicator(),
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                CommonButton(
+                    buttonName: "Get data",
+                    onTap: () {
+                      addUserController.getallUserFun();
+                    }),
+                SizedBox(
+                  height: 10,
+                ),
+                ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: 5,
+                    itemBuilder: (context, index) {
+                  return ListTile(
+                   // title: t,
+                  );
                 })
               ],
             ),

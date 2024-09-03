@@ -10,34 +10,50 @@ class AddUserController extends GetxController {
   TextEditingController nameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
+  RxList<Map<String, dynamic>> userList = <Map<String, dynamic>>[].obs;
+
   RxBool isLoading = false.obs;
 
   adduserFun() async {
     log("..................sure.............................");
-    isLoading.value=true;
-  bool status =  await AddUserService.adduserService(
+    isLoading.value = true;
+    bool status = await AddUserService.adduserService(
         name: nameController.text, password: passwordController.text);
-    isLoading.value=false;
+    isLoading.value = false;
 
-
-
-    if(status){
+    if (status) {
       nameController.clear();
       passwordController.clear();
     }
     log("..................ses.............................");
   }
 
+  getallUserFun() async {
+    QuerySnapshot<Map<String, dynamic>>? data =
+        await GetAllUserService.getalluserService();
 
+    if (data != null) {
 
-  getallUserFun()async{
-    QuerySnapshot<Map<String,dynamic>>? data =  await GetAllUserService.getalluserService();
+      userList.clear();
+      log("................length :${data.docs.length}");
 
+      for (var i in data.docs.toList()) {
+        log("...........${i["name"]}................");
+        log("...........${i["password"]}................");
 
-
-    if(data != null){
-      log("................lenth :${data.docs.length}");
+        var backData = {"name": i["name"],
+          "password": i["password"]
+        };
+        userList.add(backData);
+      }
     }
+    return data;
   }
 
+  @override
+  void onInit() {
+    getallUserFun();
+
+    super.onInit();
+  }
 }

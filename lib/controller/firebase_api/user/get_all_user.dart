@@ -6,7 +6,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 class GetAllUserService{
 
-  static Future<QuerySnapshot<Map<String,dynamic>>?> getalluserService()async{
+  static Future<QuerySnapshot<Map<String,dynamic>>?>
+  getalluserService()async{
 
     try{
 
@@ -17,7 +18,9 @@ class GetAllUserService{
       log(" data.............$get");
       log(".........data ${get.docs.length}");
 
+      return get;
     }catch (e){log("error :$e");}
+    return null;
 
   }
 

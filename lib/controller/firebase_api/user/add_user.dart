@@ -10,8 +10,8 @@ class AddUserService {
 
       FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
 
-      var d = DateTime.now();
-      await firebaseFirestore.collection("user").add(data);
+      var date = DateTime.now();
+      await firebaseFirestore.collection("user").doc(date.toString().substring(0,10)).collection("collectionPath").add(data);
       return true;
     } catch (e) {
       log("error :$e");
